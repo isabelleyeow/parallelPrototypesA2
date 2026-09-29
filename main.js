@@ -59,3 +59,8 @@ ring.addEventListener("mouseenter", () => {
   timeText.textContent = time + " · " + timeOfDay;
   timeText.classList.add("show");
 });
+
+ring.addEventListener("mouseleave", () => {
+  timeText.classList.remove("show");
+});
+
