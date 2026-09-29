@@ -6,3 +6,11 @@ const chords = {
   afternoon: [146.83, 174.61, 220, 261.63],
   dusk:      [110, 130.81, 164.81, 196]
 };
+const colours = {
+  night:     ["#05060f", "#141733"],
+  dawn:      ["#2d2757", "#d4817f"],
+  morning:   ["#7fb8e3", "#e3f1f8"],
+  midday:    ["#4f9ddb", "#cde6f6"],
+  afternoon: ["#f0a257", "#f8d7a4"],
+  dusk:      ["#dd5f3a", "#7a3364"]
+};
