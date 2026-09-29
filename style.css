@@ -141,4 +141,30 @@ body::after {
   0%, 100% { opacity: 0.25; }
   50% { opacity: 0.6; }
 }
+/* time of day for users to preview*/
+.proto-nav {
+  position: fixed;
+  left: 20px;
+  right: 20px;
+  bottom: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 6px 14px;
+  align-items: center;
+  font: 400 0.7rem/1.4 var(--sans);
+  letter-spacing: 0.12em;
+  opacity: 0.35;
+  transition: opacity 0.6s ease;
+  z-index: 20;
+}
+.proto-nav:hover, .proto-nav:focus-within { opacity: 0.9; }
+.proto-nav a { color: inherit; text-decoration: none; border-bottom: 1px solid transparent; }
+.proto-nav a:hover, .proto-nav a:focus-visible { border-bottom-color: currentColor; outline: none; }
+.proto-nav a[aria-current='true'] { border-bottom-color: currentColor; }
+.proto-nav .sep { opacity: 0.5; }
 
+@media (prefers-reduced-motion: reduce) {
+  :root { --sky-speed: 0.01s; }
+  .hint { animation: none; }
+}
