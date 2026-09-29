@@ -26,74 +26,13 @@ function getTimeOfDay(hour) {
   if (hour < 21) return "dusk";
   return "night";
 }
-const hour = new Date().getHours();
-const timeOfDay = getTimeOfDay(hour);
 
-document.body.style.backgroundColor = colours[timeOfDay];
+//preview testing
+const params = new URLSearchParams(window.location.search);
+const isPreview = params.has("hour");
 
-const orb = document.querySelector("#orb");
-const timeText = document.querySelector("#time");
-
-orb.addEventListener("mouseenter", () => {
-  const now = new Date();
-  timeText.textContent = now.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
-  timeText.classList.add("show");
-});
-
-orb.addEventListener("mouseleave", () => {
-  timeText.classList.remove("show");
-});
-
-//sound
-let audioCtx;
-let filter;
-let volume;
-
-function startSound() {
-  audioCtx = new AudioContext();
- filter = audioCtx.createBiquadFilter();
-  filter.type = "lowpass";
-  filter.frequency.value = 600;
-
-   volume = audioCtx.createGain();
-  volume.gain.value = 0;
-
-  filter.connect(volume);
-  volume.connect(audioCtx.destination);
-
-  chords[timeOfDay].forEach((note) => {
-    const osc = audioCtx.createOscillator();
-    osc.type = "sawtooth";
-    osc.frequency.value = note;
-    osc.connect(filter);
-    osc.start();
-  });
-   volume.gain.linearRampToValueAtTime(0.15, audioCtx.currentTime + 3);
-
-  document.querySelector("#hint").style.display = "none";
+let hour = new Date().getHours();
+if (isPreview) {
+  hour = Number(params.get("hour"));
 }
-
-document.addEventListener("pointerdown", startSound, { once: true });
-// breathing section
-document.addEventListener("pointerdown", () => {
-  if (!audioCtx) return;
-  const now = audioCtx.currentTime;
-
-  // Brighten the sound over 2 seconds
-  filter.frequency.cancelScheduledValues(now);
-  filter.frequency.setValueAtTime(filter.frequency.value, now);
-  filter.frequency.linearRampToValueAtTime(2500, now + 2);
-
-  orb.classList.add("breathing");
-});
-document.addEventListener("pointerup", () => {
-  if (!audioCtx) return;
-  const now = audioCtx.currentTime;
-
-  // Settle back slowly over 4 seconds
-  filter.frequency.cancelScheduledValues(now);
-  filter.frequency.setValueAtTime(filter.frequency.value, now);
-  filter.frequency.linearRampToValueAtTime(600, now + 4);
-
-  orb.classList.remove("breathing");
-});
+const timeOfDay = getTimeOfDay(hour);
