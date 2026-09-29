@@ -8,3 +8,16 @@
   text-transform: uppercase;
   opacity: 0.5;
 }
+#orb {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 34vmin;
+  height: 34vmin;
+  border-radius: 50%;
+  border: 1.5px solid var(--ink);
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.25), inset 0 0 40px rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  opacity: 0.6;
+  transition: transform 2s ease, opacity 1s ease, background-color 1s ease;
+}
