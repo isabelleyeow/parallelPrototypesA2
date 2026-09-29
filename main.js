@@ -14,3 +14,17 @@ const colours = {
   afternoon: "#f2a65a",
   dusk:      "#6b2f5c"
 };
+
+function getTimeOfDay(hour) {
+  if (hour < 5)  return "night";
+  if (hour < 8)  return "dawn";
+  if (hour < 12) return "morning";
+  if (hour < 17) return "afternoon";
+  if (hour < 21) return "dusk";
+  return "night";
+}
+
+const hour = new Date().getHours();
+const timeOfDay = getTimeOfDay(hour);
+
+document.body.style.backgroundColor = colours[timeOfDay];
