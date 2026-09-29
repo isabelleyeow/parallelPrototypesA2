@@ -51,3 +51,21 @@ body::after {
   position: fixed;
   inset: 0;
 }
+.proto-title {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  margin: 0;
+  font: 500 0.72rem/1.4 var(--sans);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.45;
+  z-index: 10;
+}
+.proto-title span {
+  display: block;
+  opacity: 0.7;
+  letter-spacing: 0.12em;
+  text-transform: none;
+  font-weight: 400;
+}
