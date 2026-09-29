@@ -113,3 +113,10 @@ document.addEventListener("pointerdown", () => {
   filter.frequency.setValueAtTime(filter.frequency.value, now);
   filter.frequency.linearRampToValueAtTime(2500, now + 2);
 
+  orb.classList.add("breathing");
+});
+
+document.addEventListener("pointerup", () => {
+  if (!audioCtx) return;
+  const now = audioCtx.currentTime;
+
