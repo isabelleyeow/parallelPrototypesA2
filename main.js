@@ -32,3 +32,15 @@ if (isPreview) {
 }
 
 const timeOfDay = getTimeOfDay(hour);
+document.querySelectorAll("#preview a").forEach((link) => {
+  if (link.search === window.location.search) {
+    link.classList.add("current");
+  }
+});
+
+document.body.style.background = skies[timeOfDay];
+
+if (timeOfDay === "morning" || timeOfDay === "midday" || timeOfDay === "afternoon") {
+  document.body.style.color = "#1c1b2c";
+  document.querySelector("#ring").style.borderColor = "#1c1b2c";
+}
