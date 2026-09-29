@@ -2,3 +2,19 @@
 @property --sky-bottom { syntax: '<color>'; inherits: true; initial-value: #141733; }
 @property --sky-mid    { syntax: '<color>'; inherits: true; initial-value: #0c0e22; }
 @property --ink        { syntax: '<color>'; inherits: true; initial-value: rgb(240, 238, 250); }
+
+/* colours and fonts*/
+:root {
+  --sky-top: #05060f;
+  --sky-bottom: #141733;
+  --sky-mid: #0c0e22;
+  --ink: rgb(240, 238, 250);
+  --sky-speed: 3s;
+  --serif: 'Cormorant Garamond', 'Iowan Old Style', Georgia, serif;
+  --sans: 'Space Grotesk', 'Helvetica Neue', Arial, sans-serif;
+  transition:
+  --sky-top var(--sky-speed) ease,
+    --sky-bottom var(--sky-speed) ease,
+    --sky-mid var(--sky-speed) ease,
+    --ink var(--sky-speed) ease;
+}
