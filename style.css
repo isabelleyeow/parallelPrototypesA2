@@ -1,3 +1,21 @@
+/* gradient*/
+@property --sky-top    { syntax: '<color>'; inherits: true; initial-value: #05060f; }
+@property --sky-bottom { syntax: '<color>'; inherits: true; initial-value: #141733; }
+@property --ink        { syntax: '<color>'; inherits: true; initial-value: rgb(240, 238, 250); }
+
+:root {
+  --sky-top: #05060f;
+  --sky-bottom: #141733;
+  --ink: rgb(240, 238, 250);
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Space Grotesk', Arial, sans-serif;
+  transition: --sky-top 3s ease, --sky-bottom 3s ease, --ink 3s ease;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
 .title {
   position: fixed;
   top: 20px;
