@@ -1,0 +1,10 @@
+.title {
+  position: fixed;
+  top: 20px;
+  left: 24px;
+  margin: 0;
+  font: 500 0.72rem var(--sans);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
