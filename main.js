@@ -83,9 +83,20 @@ function startSound() {
   filter = audioCtx.createBiquadFilter();
   filter.type = "lowpass";
   filter.frequency.value = 600;
-  
+
   volume = audioCtx.createGain();
   volume.gain.value = 0;
 
   filter.connect(volume);
   volume.connect(audioCtx.destination);
+
+  chords[timeOfDay].forEach((note) => {
+    const osc = audioCtx.createOscillator();
+    osc.type = "sawtooth";
+    osc.frequency.value = note;
+    osc.connect(filter);
+    osc.start();
+  });
+
+   volume.gain.linearRampToValueAtTime(0.15, audioCtx.currentTime + 3);
+
