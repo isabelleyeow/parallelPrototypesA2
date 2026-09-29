@@ -11,12 +11,25 @@
         <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!--instructions and titles of what has to be done-->
     <h1 class="proto-title">Prototype 1 <span>hover near the light to see the hour · press &amp; hold to breathe</span></h1>
         <main class="stage" id="stage" aria-label="A single glowing body whose colour follows the sky. Drawing near it brings the sound forward and reveals the time.">
             <div class="orb" id="orb" aria-hidden="true"></div>
             <p class="whisper" id="whisper"></p>
         </main>
             <p class="hint" id="hint">press anywhere to begin listening</p>
+        
+    <!--preview different timings section-->
+    <nav class="proto-nav" aria-label="Time of day preview">
+        <span class="sep">preview:</span>
+        <a href="?" data-hour="">now</a>
+        <a href="?hour=5.5" data-hour="5.5">dawn</a>
+        <a href="?hour=8.5" data-hour="8.5">morning</a>
+        <a href="?hour=12.5" data-hour="12.5">midday</a>
+        <a href="?hour=15.5" data-hour="15.5">afternoon</a>
+        <a href="?hour=18" data-hour="18">dusk</a>
+        <a href="?hour=23" data-hour="23">night</a>
+    </nav>
 
 </body>
 </html>
