@@ -51,6 +51,7 @@ body::after {
   position: fixed;
   inset: 0;
 }
+/* label */
 .proto-title {
   position: fixed;
   top: 20px;
@@ -69,3 +70,25 @@ body::after {
   text-transform: none;
   font-weight: 400;
 }
+.orb {
+  --scale: 1;
+  --glow: 0.35;
+  --orb-core: rgb(255, 244, 214);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 34vmin;
+  height: 34vmin;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(var(--scale));
+  background: radial-gradient(circle at 50% 50%,
+    var(--orb-core) 0%,
+    color-mix(in srgb, var(--orb-core) 55%, transparent) 38%,
+    transparent 70%);
+  box-shadow: 0 0 calc(12vmin * var(--glow)) calc(4vmin * var(--glow))
+    color-mix(in srgb, var(--orb-core) 45%, transparent);
+  filter: blur(calc(2px + 6px * (1 - var(--glow))));
+  opacity: calc(0.55 + 0.45 * var(--glow));
+  will-change: transform, filter;
+}
+
