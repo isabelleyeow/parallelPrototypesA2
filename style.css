@@ -46,6 +46,15 @@ body::after {
   text-transform: uppercase;
   opacity: 0.5;
 }
+.instructions {
+  position: fixed;
+  bottom: 20px;
+  left: 24px;
+  margin: 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  opacity: 0.5;
+}
 #orb {
   position: absolute;
   top: 50%;
@@ -131,6 +140,9 @@ body.breathing #orb {
 .preview a[aria-current="true"] {
   border-bottom-color: currentColor;
 }
-
+@media (prefers-reduced-motion: reduce) {
+  :root { transition: none; }
+  #hint { animation: none; }
+}
 
 
