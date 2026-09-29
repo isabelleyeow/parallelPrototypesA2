@@ -78,7 +78,7 @@ function startSound() {
   volume.gain.value = 0;
   filter.connect(volume);
   volume.connect(audioCtx.destination);
-}
+
   chords[timeOfDay].forEach((note) => {
     const osc = audioCtx.createOscillator();
     osc.type = "sawtooth";
@@ -86,3 +86,11 @@ function startSound() {
     osc.connect(filter);
     osc.start();
   });
+
+  volume.gain.linearRampToValueAtTime(0.15, audioCtx.currentTime + 3);
+
+  document.querySelector("#hint").style.display = "none";
+}
+
+document.addEventListener("pointerdown", startSound, { once: true });
+
