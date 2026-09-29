@@ -48,3 +48,27 @@ root.style.setProperty("--sky-bottom", colours[timeOfDay][1]);
 if (timeOfDay === "morning" || timeOfDay === "midday" || timeOfDay === "afternoon") {
   root.style.setProperty("--ink", "rgb(24, 24, 44)");
 }
+// orb and hover edits
+const orb = document.querySelector("#orb");
+const timeText = document.querySelector("#whisper");
+// time features
+function formatTime(h) {
+  const hours = Math.floor(h);
+  const minutes = Math.round((h - hours) * 60);
+  const h12 = hours % 12 === 0 ? 12 : hours % 12;
+  return h12 + ":" + String(minutes).padStart(2, "0") + (hours < 12 ? " AM" : " PM");
+}
+orb.addEventListener("mouseenter", () => {
+  let time;
+  if (isPreview) {
+    time = formatTime(hour);
+  } else {
+    time = new Date().toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+  }
+  timeText.innerHTML = time + "<small>" + timeOfDay + "</small>";
+  timeText.classList.add("show");
+});
+
+orb.addEventListener("mouseleave", () => {
+  timeText.classList.remove("show");
+});
