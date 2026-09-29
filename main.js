@@ -104,4 +104,12 @@ function startSound() {
 }
 
 document.addEventListener("pointerdown", startSound, { once: true });
+// breathing part, mainly just the press and hold
+document.addEventListener("pointerdown", () => {
+  if (!audioCtx) return;
+  const now = audioCtx.currentTime;
+
+  filter.frequency.cancelScheduledValues(now);
+  filter.frequency.setValueAtTime(filter.frequency.value, now);
+  filter.frequency.linearRampToValueAtTime(2500, now + 2);
 
