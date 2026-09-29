@@ -91,4 +91,28 @@ body::after {
   opacity: calc(0.55 + 0.45 * var(--glow));
   will-change: transform, filter;
 }
-
+.whisper {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  text-align: center;
+  color: rgb(40, 36, 64); /* the orb is always pale, so the clock is always dark */
+  font: italic 400 1.6rem/1 var(--serif);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1.4s ease;
+  z-index: 5;
+}
+.whisper small {
+  display: block;
+  margin-top: 0.45em;
+  font: 500 0.62rem/1 var(--sans);
+  font-style: normal;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
