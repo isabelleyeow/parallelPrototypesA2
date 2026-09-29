@@ -72,3 +72,7 @@ orb.addEventListener("mouseenter", () => {
 orb.addEventListener("mouseleave", () => {
   timeText.classList.remove("show");
 });
+// sound
+let audioCtx;
+let filter;
+let volume;
