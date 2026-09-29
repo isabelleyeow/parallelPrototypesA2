@@ -45,3 +45,6 @@ document.querySelectorAll(".proto-nav a").forEach((link) => {
 const root = document.documentElement;
 root.style.setProperty("--sky-top", colours[timeOfDay][0]);
 root.style.setProperty("--sky-bottom", colours[timeOfDay][1]);
+if (timeOfDay === "morning" || timeOfDay === "midday" || timeOfDay === "afternoon") {
+  root.style.setProperty("--ink", "rgb(24, 24, 44)");
+}
