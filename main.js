@@ -14,3 +14,9 @@
       if (now - last >= ms) { last = now; fn(...args); }
     };
   };
+// time 
+const params = new URLSearchParams(location.search);
+  const forcedHour = params.has('hour') ? parseFloat(params.get('hour')) : null;
+  const isPreview = forcedHour !== null && !Number.isNaN(forcedHour);
+  const loadedAt = performance.now();
+  const hasTemporal = typeof window.Temporal !== 'undefined' && !!window.Temporal.Now;
