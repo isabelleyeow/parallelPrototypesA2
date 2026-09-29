@@ -36,3 +36,12 @@ if (isPreview) {
   hour = Number(params.get("hour"));
 }
 const timeOfDay = getTimeOfDay(hour);
+document.querySelectorAll(".proto-nav a").forEach((link) => {
+  if (link.search === window.location.search) {
+    link.setAttribute("aria-current", "true");
+  }
+});
+// gradient
+const root = document.documentElement;
+root.style.setProperty("--sky-top", colours[timeOfDay][0]);
+root.style.setProperty("--sky-bottom", colours[timeOfDay][1]);
