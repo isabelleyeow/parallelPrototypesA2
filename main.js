@@ -100,3 +100,8 @@ function startSound() {
 
    volume.gain.linearRampToValueAtTime(0.15, audioCtx.currentTime + 3);
 
+   document.querySelector("#hint").classList.add("is-gone");
+}
+
+document.addEventListener("pointerdown", startSound, { once: true });
+
