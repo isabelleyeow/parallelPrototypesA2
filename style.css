@@ -1,0 +1,4 @@
+@property --sky-top    { syntax: '<color>'; inherits: true; initial-value: #05060f; }
+@property --sky-bottom { syntax: '<color>'; inherits: true; initial-value: #141733; }
+@property --sky-mid    { syntax: '<color>'; inherits: true; initial-value: #0c0e22; }
+@property --ink        { syntax: '<color>'; inherits: true; initial-value: rgb(240, 238, 250); }
