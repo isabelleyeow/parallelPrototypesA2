@@ -21,3 +21,67 @@
   opacity: 0.6;
   transition: transform 2s ease, opacity 1s ease, background-color 1s ease;
 }
+#orb:hover {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+body.breathing #orb {
+  transform: translate(-50%, -50%) scale(1.35);
+}
+/* the time below the ring*/
+#time {
+  position: absolute;
+  top: calc(50% + 22vmin);
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  font: 500 0.8rem var(--sans);
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+#time.show {
+  opacity: 0.85;
+}
+#hint {
+  position: absolute;
+  top: calc(50% - 25vmin);
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+}
+
+.instructions {
+  position: fixed;
+  bottom: 20px;
+  left: 24px;
+  margin: 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  opacity: 0.5;
+}
+/* previews*/
+.preview {
+  position: fixed;
+  top: 50%;
+  right: 24px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  opacity: 0.5;
+  transition: opacity 0.5s ease;
+}
+
+.preview:hover {
+  opacity: 1;
+}
+
