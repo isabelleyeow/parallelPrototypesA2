@@ -64,3 +64,10 @@ ring.addEventListener("mouseleave", () => {
   timeText.classList.remove("show");
 });
 
+// sound
+let audioCtx;
+let filter;
+let volume;
+
+function startSound() {
+  audioCtx = new AudioContext();
