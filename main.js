@@ -46,3 +46,16 @@ orb.addEventListener("mouseleave", () => {
 let audioCtx;
 let filter;
 let volume;
+
+function startSound() {
+  audioCtx = new AudioContext();
+ filter = audioCtx.createBiquadFilter();
+  filter.type = "lowpass";
+  filter.frequency.value = 600;
+
+   volume = audioCtx.createGain();
+  volume.gain.value = 0;
+
+  filter.connect(volume);
+  volume.connect(audioCtx.destination);
+  
