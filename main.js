@@ -84,3 +84,14 @@ document.addEventListener("pointerdown", () => {
 
   orb.classList.add("breathing");
 });
+document.addEventListener("pointerup", () => {
+  if (!audioCtx) return;
+  const now = audioCtx.currentTime;
+
+  // Settle back slowly over 4 seconds
+  filter.frequency.cancelScheduledValues(now);
+  filter.frequency.setValueAtTime(filter.frequency.value, now);
+  filter.frequency.linearRampToValueAtTime(600, now + 4);
+
+  orb.classList.remove("breathing");
+});
