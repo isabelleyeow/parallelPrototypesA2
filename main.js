@@ -14,3 +14,21 @@ const colours = {
   afternoon: ["#f0a257", "#f8d7a4"],
   dusk:      ["#dd5f3a", "#7a3364"]
 };
+function getTimeOfDay(hour) {
+  if (hour < 5)  return "night";
+  if (hour < 8)  return "dawn";
+  if (hour < 11) return "morning";
+  if (hour < 14) return "midday";
+  if (hour < 17) return "afternoon";
+  if (hour < 21) return "dusk";
+  return "night";
+}
+const params = new URLSearchParams(window.location.search);
+const isPreview = params.has("hour");
+
+let hour = new Date().getHours();
+if (isPreview) {
+  hour = Number(params.get("hour"));
+}
+
+const timeOfDay = getTimeOfDay(hour);
