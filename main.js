@@ -28,3 +28,21 @@ const hour = new Date().getHours();
 const timeOfDay = getTimeOfDay(hour);
 
 document.body.style.backgroundColor = colours[timeOfDay];
+
+const orb = document.querySelector("#orb");
+const timeText = document.querySelector("#time");
+
+orb.addEventListener("mouseenter", () => {
+  const now = new Date();
+  timeText.textContent = now.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+  timeText.classList.add("show");
+});
+
+orb.addEventListener("mouseleave", () => {
+  timeText.classList.remove("show");
+});
+
+//sound
+let audioCtx;
+let filter;
+let volume;
