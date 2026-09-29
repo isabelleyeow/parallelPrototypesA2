@@ -44,3 +44,10 @@ if (timeOfDay === "morning" || timeOfDay === "midday" || timeOfDay === "afternoo
   document.body.style.color = "#1c1b2c";
   document.querySelector("#ring").style.borderColor = "#1c1b2c";
 }
+
+const ring = document.querySelector("#ring");
+const timeText = document.querySelector("#time");
+
+ring.addEventListener("mouseenter", () => {
+  let time;
+  if (isPreview) {
