@@ -51,3 +51,11 @@ const timeText = document.querySelector("#time");
 ring.addEventListener("mouseenter", () => {
   let time;
   if (isPreview) {
+    const h = hour % 12 === 0 ? 12 : hour % 12;
+    time = h + (hour < 12 ? " AM" : " PM");
+  } else {
+    time = new Date().toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+  }
+  timeText.textContent = time + " · " + timeOfDay;
+  timeText.classList.add("show");
+});
