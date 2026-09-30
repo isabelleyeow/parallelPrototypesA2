@@ -71,3 +71,9 @@ let audioCtx;
 let filter;
 let volume;
 
+function startSound() {
+  audioCtx = new AudioContext();
+  
+  filter = audioCtx.createBiquadFilter();
+  filter.type = "lowpass";
+  filter.frequency.value = 600;
