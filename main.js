@@ -126,3 +126,16 @@ function startSound() {
   document.querySelector("#hint").classList.add("is-gone");
 }
 document.addEventListener("pointerdown", startSound, { once: true });
+
+function glide(setting, value, seconds) {
+  const now = audioCtx.currentTime;
+  setting.cancelScheduledValues(now);
+  setting.setValueAtTime(setting.value, now);
+  setting.linearRampToValueAtTime(value, now + seconds);
+}
+
+document.addEventListener("pointerdown", () => {
+  if (!audioCtx) return;
+  glide(filter.frequency, brightness[timeOfDay] * 2.5, 2);
+  orb.classList.add("breathing");
+});
