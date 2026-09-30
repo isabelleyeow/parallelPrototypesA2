@@ -122,4 +122,16 @@ function startSound() {
     osc.connect(hum);
     osc.start();
   });
+ringBowl();
 
+  document.querySelector("#hint").classList.add("is-gone");
+}
+
+document.addEventListener("pointerdown", startSound, { once: true });
+
+function glide(setting, value, seconds) {
+  const now = audioCtx.currentTime;
+  setting.cancelScheduledValues(now);
+  setting.setValueAtTime(setting.value, now);
+  setting.linearRampToValueAtTime(value, now + seconds);
+}
