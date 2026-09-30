@@ -135,3 +135,15 @@ function glide(setting, value, seconds) {
   setting.setValueAtTime(setting.value, now);
   setting.linearRampToValueAtTime(value, now + seconds);
 }
+
+document.addEventListener("pointerdown", () => {
+  if (!audioCtx) return;
+  glide(hum.gain, 0.1, 3);  
+  orb.classList.add("breathing");
+});
+
+document.addEventListener("pointerup", () => {
+  if (!audioCtx) return;
+  glide(hum.gain, 0.04, 6); 
+  orb.classList.remove("breathing");
+});
