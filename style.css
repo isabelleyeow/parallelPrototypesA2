@@ -101,3 +101,14 @@ header p {
   opacity: 1;
   transform: scale(1.3);
 }
+#preview a.current {
+  opacity: 1;
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+#preview .dawn      { background: linear-gradient(#2d2757, #d4817f); }
+#preview .morning   { background: linear-gradient(#7fb8e3, #e3f1f8); }
+#preview .midday    { background: linear-gradient(#4f9ddb, #cde6f6); }
+#preview .afternoon { background: linear-gradient(#f0a257, #f8d7a4); }
+#preview .dusk      { background: linear-gradient(#dd5f3a, #7a3364); }
+#preview .night     { background: linear-gradient(#05060f, #141733); }
