@@ -48,7 +48,7 @@ if (timeOfDay === "morning" || timeOfDay === "midday" || timeOfDay === "afternoo
   document.querySelector("#ring").style.borderColor = "#1c1b2c";
 }
 
-const ring = document.querySelector("#ring");
+const ring = document.querySelector("#orb");
 const timeText = document.querySelector("#time");
 
 ring.addEventListener("mouseenter", () => {
