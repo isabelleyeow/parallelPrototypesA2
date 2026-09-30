@@ -40,3 +40,23 @@ function ringNext() {
   if (holding) gap = gap / 2;
   setTimeout(ringNext, gap * 1000);
 }
+
+function startSound() {
+  audioCtx = new AudioContext();
+
+  volume = audioCtx.createGain();
+  volume.gain.value = 1;
+  volume.connect(audioCtx.destination);
+
+  const hum = audioCtx.createGain();
+  hum.gain.value = 0;
+  hum.gain.linearRampToValueAtTime(0.04, audioCtx.currentTime + 5);
+  hum.connect(volume);
+
+  chords[timeOfDay].slice(0, 2).forEach((note) => {
+    const osc = audioCtx.createOscillator();
+    osc.type = "sine";
+    osc.frequency.value = note;
+    osc.connect(hum);
+    osc.start();
+  });
