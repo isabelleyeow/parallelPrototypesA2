@@ -91,3 +91,21 @@ function startSound() {
     osc.connect(filter);
     osc.start();
   });
+
+  volume.gain.linearRampToValueAtTime(0.15, audioCtx.currentTime + 3);
+
+  document.querySelector("#hint").style.display = "none";
+}
+
+document.addEventListener("pointerdown", startSound, { once: true });
+
+document.addEventListener("pointerdown", () => {
+  if (!audioCtx) return;
+  const now = audioCtx.currentTime;
+
+  filter.frequency.cancelScheduledValues(now);
+  filter.frequency.setValueAtTime(filter.frequency.value, now);
+  filter.frequency.linearRampToValueAtTime(2500, now + 2);
+
+  sun.classList.add("breathing");
+});
