@@ -13,3 +13,29 @@ header {
   left: 24px;
   opacity: 0.6;
 }
+
+h1 {
+  margin: 0;
+  font-size: 12px;
+  font-weight: normal;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+header p {
+  margin: 4px 0 0;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+/* the sun, glowing element at the bottom */
+#sun {
+  position: absolute;
+  left: 50%;
+  bottom: -200px;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, #fff6dc 0%, rgba(255, 246, 220, 0.5) 45%, transparent 70%);
+  transition: transform 2s;
+}
