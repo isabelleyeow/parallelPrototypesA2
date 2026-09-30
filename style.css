@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  font-family: Georgia, serif;
+  color: white;
+  background: linear-gradient(#05060f, #141733);
+}
+
+header {
+  position: absolute;
+  top: 20px;
+  left: 24px;
+  opacity: 0.6;
+}
