@@ -21,11 +21,22 @@ function playChime(note) {
 
   const chimeVolume = audioCtx.createGain();
   chimeVolume.gain.setValueAtTime(0, now);
-  chimeVolume.gain.linearRampToValueAtTime(0.15, now + 0.02);       // quick soft "ting"
-  chimeVolume.gain.exponentialRampToValueAtTime(0.001, now + 4);    // long fade
+  chimeVolume.gain.linearRampToValueAtTime(0.15, now + 0.02);       
+  chimeVolume.gain.exponentialRampToValueAtTime(0.001, now + 4);  
 
   osc.connect(chimeVolume);
   chimeVolume.connect(volume);
   osc.start(now);
   osc.stop(now + 4);
+}
+
+function ringNext() {
+  const notes = chords[timeOfDay];
+  const note = notes[Math.floor(Math.random() * notes.length)] * 2;
+  playChime(note);
+
+  // press and hold 
+  let gap = chimeGap[timeOfDay];
+  if (holding) gap = gap / 2;
+  setTimeout(ringNext, gap * 1000);
 }
