@@ -60,3 +60,10 @@ function startSound() {
     osc.connect(hum);
     osc.start();
   });
+
+  ringNext();
+
+  document.querySelector("#hint").classList.add("is-gone");
+}
+
+document.addEventListener("pointerdown", startSound, { once: true });
