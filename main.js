@@ -107,3 +107,19 @@ function ringBowl() {
   setTimeout(ringBowl, ringGap[timeOfDay] * 1000);
 }
 
+function startSound() {
+  audioCtx = new AudioContext();
+
+   hum = audioCtx.createGain();
+  hum.gain.value = 0;
+  hum.gain.linearRampToValueAtTime(0.04, audioCtx.currentTime + 5);
+  hum.connect(audioCtx.destination);
+
+  chords[timeOfDay].forEach((note) => {
+    const osc = audioCtx.createOscillator();
+    osc.type = "sine";
+    osc.frequency.value = note;
+    osc.connect(hum);
+    osc.start();
+  });
+
