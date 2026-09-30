@@ -84,3 +84,26 @@ const ringGap = {
   afternoon: 7,
   dusk:      9
 };
+
+function ringBowl() {
+  const now = audioCtx.currentTime;
+  const note = chords[timeOfDay][0] * 2; 
+
+  const bowlVolume = audioCtx.createGain();
+  bowlVolume.gain.setValueAtTime(0, now);
+  bowlVolume.gain.linearRampToValueAtTime(0.12, now + 0.05);
+  bowlVolume.gain.exponentialRampToValueAtTime(0.001, now + 8); 
+  bowlVolume.connect(audioCtx.destination);
+
+   [note, note * 1.004].forEach((freq) => {
+    const osc = audioCtx.createOscillator();
+    osc.type = "sine";
+    osc.frequency.value = freq;
+    osc.connect(bowlVolume);
+    osc.start(now);
+    osc.stop(now + 8);
+  });
+
+  setTimeout(ringBowl, ringGap[timeOfDay] * 1000);
+}
+
