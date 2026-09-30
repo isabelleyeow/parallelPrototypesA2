@@ -45,3 +45,27 @@ header p {
 #sun.breathing {
   transform: translateX(-50%) translateY(-60px) scale(1.25);
 }
+/* time */
+#time {
+  position: absolute;
+  top: 25%;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  font-size: 64px;
+  font-style: italic;
+  opacity: 0;
+  transition: opacity 1.5s;
+}
+#time small {
+  display: block;
+  margin-top: 8px;
+  font-size: 12px;
+  font-style: normal;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+#time.show {
+  opacity: 1;
+}
