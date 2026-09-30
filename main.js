@@ -97,3 +97,9 @@ function playNote(note) {
   noteVolume.gain.setValueAtTime(0, now);
   noteVolume.gain.linearRampToValueAtTime(0.12, now + 0.1);   
   noteVolume.gain.exponentialRampToValueAtTime(0.001, now + 2.5);
+
+  osc.connect(noteVolume);
+  noteVolume.connect(filter);
+  osc.start(now);
+  osc.stop(now + 2.5);
+}
