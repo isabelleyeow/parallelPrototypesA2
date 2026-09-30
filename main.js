@@ -24,3 +24,17 @@ function getTimeOfDay(hour) {
   if (hour < 21) return "dusk";
   return "night";
 }
+const params = new URLSearchParams(window.location.search);
+const isPreview = params.has("hour");
+
+let hour = new Date().getHours();
+if (isPreview) {
+  hour = Number(params.get("hour"));
+}
+
+const timeOfDay = getTimeOfDay(hour);
+document.querySelectorAll("#preview a").forEach((link) => {
+  if (link.search === window.location.search) {
+    link.classList.add("current");
+  }
+});
