@@ -103,3 +103,25 @@ function playNote(note) {
   osc.start(now);
   osc.stop(now + 2.5);
 }
+
+const pattern = [0, 1, 2, 3, 2, 1];
+
+function playNext() {
+  const notes = chords[timeOfDay];
+  playNote(notes[pattern[step]]);
+  step = (step + 1) % pattern.length; 
+  setTimeout(playNext, noteGap[timeOfDay] * 1000);
+}
+
+function startSound() {
+  audioCtx = new AudioContext();
+
+  filter = audioCtx.createBiquadFilter();
+  filter.type = "lowpass";
+  filter.frequency.value = brightness[timeOfDay];
+  filter.connect(audioCtx.destination);
+
+  playNext();
+
+  document.querySelector("#hint").classList.add("is-gone");
+}
