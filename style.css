@@ -73,7 +73,7 @@ body::after {
   background-color: rgba(255, 255, 255, 0.12);
 }
 
-body.breathing #orb {
+#orb.breathing {
   transform: translate(-50%, -50%) scale(1.35);
 }
 /* the time below the ring*/
