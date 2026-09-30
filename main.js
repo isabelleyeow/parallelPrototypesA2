@@ -1,12 +1,13 @@
 // the sound/chord that plays 
 const chords = {
-  night:     [110, 130.81, 164.81],
-  dawn:      [146.83, 185, 220],
-  morning:   [130.81, 164.81, 196, 246.94],
-  midday:    [146.83, 185, 220, 277.18],
-  afternoon: [146.83, 174.61, 220, 261.63],
-  dusk:      [110, 130.81, 164.81, 196]
+  night:     [196.00, 246.94, 293.66, 369.99],
+  dawn:      [174.61, 220.00, 261.63, 329.63],
+  morning:   [261.63, 329.63, 392.00, 493.88],
+  midday:    [293.66, 369.99, 440.00, 554.37],
+  afternoon: [196.00, 246.94, 293.66, 440.00],
+  dusk:      [220.00, 261.63, 329.63, 392.00]
 };
+
 // colours for each time of the day
 const colours = {
   night:     ["#05060f", "#141733"],
@@ -15,6 +16,15 @@ const colours = {
   midday:    ["#4f9ddb", "#cde6f6"],
   afternoon: ["#f0a257", "#f8d7a4"],
   dusk:      ["#dd5f3a", "#7a3364"]
+};
+
+const brightness = {
+  night:     700,
+  dawn:      1200,
+  morning:   2200,
+  midday:    3000,
+  afternoon: 2200,
+  dusk:      1100
 };
 
 function getTimeOfDay(hour) {
