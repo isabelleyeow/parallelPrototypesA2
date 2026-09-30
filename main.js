@@ -61,4 +61,13 @@ sun.addEventListener("mouseenter", () => {
   timeText.classList.add("show");
   sun.classList.add("raised");
 });
+sun.addEventListener("mouseleave", () => {
+  timeText.classList.remove("show");
+  sun.classList.remove("raised");
+});
+
+// sound
+let audioCtx;
+let filter;
+let volume;
 
