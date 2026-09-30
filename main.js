@@ -139,3 +139,9 @@ document.addEventListener("pointerdown", () => {
   glide(filter.frequency, brightness[timeOfDay] * 2.5, 2);
   orb.classList.add("breathing");
 });
+
+document.addEventListener("pointerup", () => {
+  if (!audioCtx) return;
+  glide(filter.frequency, brightness[timeOfDay], 4);
+  orb.classList.remove("breathing");
+});
