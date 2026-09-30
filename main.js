@@ -76,3 +76,24 @@ orb.addEventListener("mouseleave", () => {
 let audioCtx;
 let filter;
 let step = 0;
+
+const noteGap = {
+  night:     1.6,
+  dawn:      1.2,
+  morning:   0.8,
+  midday:    0.7,
+  afternoon: 0.8,
+  dusk:      1.2
+};
+
+function playNote(note) {
+  const now = audioCtx.currentTime;
+
+  const osc = audioCtx.createOscillator();
+  osc.type = "triangle";
+  osc.frequency.value = note;
+
+  const noteVolume = audioCtx.createGain();
+  noteVolume.gain.setValueAtTime(0, now);
+  noteVolume.gain.linearRampToValueAtTime(0.12, now + 0.1);   
+  noteVolume.gain.exponentialRampToValueAtTime(0.001, now + 2.5);
