@@ -79,3 +79,25 @@ header p {
   letter-spacing: 2px;
   opacity: 0.6;
 }
+/* previews*/
+#preview {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 14px;
+}
+#preview a {
+  width: 16px;
+  height: 16px;
+  border: 1px solid currentColor; /* white at night, dark in the day */
+  border-radius: 50%;
+  opacity: 0.6;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+#preview a:hover {
+  opacity: 1;
+  transform: scale(1.3);
+}
