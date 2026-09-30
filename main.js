@@ -125,3 +125,4 @@ function startSound() {
 
   document.querySelector("#hint").classList.add("is-gone");
 }
+document.addEventListener("pointerdown", startSound, { once: true });
