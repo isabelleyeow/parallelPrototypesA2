@@ -69,3 +69,13 @@ header p {
 #time.show {
   opacity: 1;
 }
+#hint {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  font-size: 13px;
+  letter-spacing: 2px;
+  opacity: 0.6;
+}
