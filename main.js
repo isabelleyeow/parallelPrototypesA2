@@ -44,3 +44,21 @@ document.body.style.background = skies[timeOfDay];
 if (timeOfDay === "morning" || timeOfDay === "midday" || timeOfDay === "afternoon") {
   document.body.style.color = "#1c1b2c";
 }
+
+const sun = document.querySelector("#sun");
+const timeText = document.querySelector("#time");
+
+sun.addEventListener("mouseenter", () => {
+  let time;
+  if (isPreview) {
+    // the pretend hour, e.g. "6 PM"
+    const h = hour % 12 === 0 ? 12 : hour % 12;
+    time = h + (hour < 12 ? " AM" : " PM");
+  } else {
+    time = new Date().toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+  }
+  timeText.innerHTML = time + "<small>" + timeOfDay + "</small>";
+  timeText.classList.add("show");
+  sun.classList.add("raised");
+});
+
