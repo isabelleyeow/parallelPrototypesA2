@@ -45,3 +45,13 @@ const pace = {
   afternoon: "warmly",
   dusk:      "slowly"
 };
+
+function getTimeOfDay(hour) {
+  if (hour < 5)  return "night";
+  if (hour < 8)  return "dawn";
+  if (hour < 11) return "morning";
+  if (hour < 14) return "midday";
+  if (hour < 17) return "afternoon";
+  if (hour < 21) return "dusk";
+  return "night";
+}
