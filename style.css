@@ -379,3 +379,23 @@ body::after {
   opacity: 1;
   translate: 0 0;
 }
+
+/* the preview time of day */
+.proto-nav {
+  position: fixed;
+  left: var(--edge);
+  right: var(--edge);
+  bottom: var(--edge);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  font: 400 0.7rem/1.4 var(--sans);
+  letter-spacing: 0.12em;
+  z-index: 20;
+}
+.proto-nav .sep {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  opacity: 0.4;
+}
