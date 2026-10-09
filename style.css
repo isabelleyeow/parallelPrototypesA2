@@ -22,3 +22,7 @@
     --sky-mid var(--sky-speed) ease,
     --ink var(--sky-speed) ease;
 }
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body { height: 100%; }
