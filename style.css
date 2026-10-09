@@ -65,3 +65,17 @@ body::after {
   pointer-events: none;
   background: radial-gradient(ellipse at center, transparent 55%, rgb(0 0 0 / 0.28) 100%);
 }
+
+.proto-title {
+  position: fixed;
+  top: var(--edge);
+  left: var(--edge);
+  margin: 0;
+  font: 500 0.72rem/1.4 var(--sans);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  /* leaves room on the right for the bell counter */
+  max-width: calc(100vw - var(--edge) * 2 - 110px);
+  z-index: 10;
+}
