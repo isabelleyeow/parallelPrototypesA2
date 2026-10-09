@@ -220,7 +220,40 @@ body::after {
   will-change: transform;
 }
 
-/* the press and hold sequence */
 .breathing .orb    { --scale: 1.22; --glow: 0.9; }
 .breathing .bloom  { --scale: 1.22; opacity: 1; }
 .breathing .corona { --scale: 1.22; opacity: 0.5; }
+
+.ripple {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--orb-size);
+  height: var(--orb-size);
+  border: 1px solid var(--ink);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  animation: ripple 7s ease-out forwards;
+}
+@keyframes ripple {
+  from { opacity: 0.16; transform: translate(-50%, -50%) scale(1); }
+  to   { opacity: 0;    transform: translate(-50%, -50%) scale(2.3); }
+}
+.whisper {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  text-align: center;
+  color: rgb(40, 36, 64);
+  font: italic 400 clamp(1.3rem, 4vmin, 2rem)/1 var(--serif);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1.4s ease;
+  z-index: 5;
+}
+
