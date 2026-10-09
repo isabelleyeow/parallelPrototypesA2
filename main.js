@@ -129,3 +129,18 @@ const bellsBox = document.querySelector("#bells");
 const bellCount = document.querySelector("#bell-count");
 const caption = document.querySelector("#caption");
 let bells = 0;
+
+function countBell() {
+  bells = bells + 1;
+  bellCount.textContent = bells;
+  bellCount.classList.remove("pulse");
+  void bellCount.offsetWidth; // restarts the animation
+  bellCount.classList.add("pulse");
+
+  if (bells === 1) {
+    caption.textContent = "Each bell marks a moment spent here. At " + timeOfDay +
+      " the bowl rings " + pace[timeOfDay] + ", about every " + ringGap[timeOfDay] + " seconds.";
+    caption.classList.add("show");
+    setTimeout(() => caption.classList.remove("show"), 7000);
+  }
+}
