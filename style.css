@@ -292,3 +292,8 @@ body::after {
   transition: opacity 2s ease;
 }
 .hint.is-gone { opacity: 0; animation: none; }
+
+@keyframes hint-pulse {
+  0%, 100% { opacity: 0.25; }
+  50% { opacity: 0.6; }
+}
