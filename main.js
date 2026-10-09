@@ -17,3 +17,13 @@ const colours = {
   afternoon: ["#f0a257", "#f4bd7d", "#f8d7a4"],
   dusk:      ["#dd5f3a", "#ac4950", "#7a3364"]
 };
+
+// the orb colours depending on the time of day
+const orbColours = {
+  night:     "#e4e8ff",  
+  dawn:      "#ffd6c4",  
+  morning:   "#fff6dc",  
+  midday:    "#fff2c2",  
+  afternoon: "#ffdca6",  
+  dusk:      "#ffc093"   
+};
