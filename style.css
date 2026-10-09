@@ -306,3 +306,29 @@ body::after {
   transition: opacity 1.5s ease;
 }
 .caption.show { opacity: 0.8; }
+
+/* the new bells feature */
+.bells {
+  position: fixed;
+  top: var(--edge);
+  right: var(--edge);
+  display: grid;
+  justify-items: end;
+  text-align: right;
+  opacity: 0.6;
+  outline: none;
+  transition: opacity 0.6s ease;
+  z-index: 20;
+  cursor: help;
+}
+.bells:hover, .bells:focus-visible, .bells.open { opacity: 1; }
+
+.bells-count {
+  font: italic 400 2rem/1 var(--serif);
+}
+
+.bells-count.pulse { animation: count-pulse 1.2s ease; }
+@keyframes count-pulse {
+  from { opacity: 0.2; }
+  to   { opacity: 1; }
+}
