@@ -114,3 +114,20 @@ body::after {
   from { transform: translate(0, 0); }
   to   { transform: translate(8vw, 6vh); }
 }
+
+.particles span {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: var(--ink);
+}
+.stars span {
+  opacity: 0.2;
+  animation: twinkle 5s ease-in-out infinite alternate;
+}
+.dust span {
+  background: #fff;
+  opacity: 0;
+  animation: float-up 18s linear infinite;
+}
