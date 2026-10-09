@@ -157,3 +157,11 @@ body::after {
 }
 
 /* the glowing orb, was the most popular*/
+.bloom, .corona, .orb {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(var(--scale));
+  transition: transform 2s ease, opacity 2s ease, filter 2s ease;
+}
