@@ -161,3 +161,21 @@ function makeRipple() {
   bloom.classList.add("ring");
   setTimeout(() => bloom.classList.remove("ring"), 600);
 }
+
+function ringBowl(note) {
+  const now = audioCtx.currentTime;
+
+  const bowlVolume = audioCtx.createGain();
+  bowlVolume.gain.setValueAtTime(0, now);
+  bowlVolume.gain.linearRampToValueAtTime(0.12, now + 0.05);
+  bowlVolume.gain.exponentialRampToValueAtTime(0.001, now + 8); // rings for 8 seconds
+  bowlVolume.connect(audioCtx.destination);
+
+  [note, note * 1.004].forEach((freq) => {
+    const osc = audioCtx.createOscillator();
+    osc.type = "sine";
+    osc.frequency.value = freq;
+    osc.connect(bowlVolume);
+    osc.start(now);
+    osc.stop(now + 8);
+  });
