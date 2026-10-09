@@ -283,3 +283,12 @@ body::after {
   pointer-events: none;
   z-index: 10;
 }
+.hint {
+  font: 400 0.78rem/1.4 var(--sans);
+  letter-spacing: 0.2em;
+  text-transform: lowercase;
+  opacity: 0.55;
+  animation: hint-pulse 4s ease-in-out infinite;
+  transition: opacity 2s ease;
+}
+.hint.is-gone { opacity: 0; animation: none; }
