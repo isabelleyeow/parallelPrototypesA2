@@ -229,3 +229,19 @@ document.addEventListener("pointerdown", () => {
     stage.classList.add("breathing");
   }, 300);
 });
+
+document.addEventListener("pointerup", (event) => {
+  clearTimeout(holdTimer);
+
+  if (isBreathing) {
+    isBreathing = false;
+    glide(hum.gain, 0.035, 6);
+    stage.classList.remove("breathing");
+  } else if (event.target === orb && !firstPress) {
+    ringBowl(chords[timeOfDay][1] * 2);
+    showTime();
+    setTimeout(hideTime, 3000);
+  }
+
+  firstPress = false;
+});
