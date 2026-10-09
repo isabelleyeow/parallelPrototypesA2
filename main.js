@@ -87,3 +87,16 @@ if (isDay) {
 const particles = document.querySelector("#particles");
 const isStarry = timeOfDay === "night" || timeOfDay === "dusk";
 particles.classList.add(isStarry ? "stars" : "dust");
+
+for (let i = 0; i < 60; i++) {
+  const dot = document.createElement("span");
+  dot.style.left = Math.random() * 100 + "%";
+  dot.style.top = Math.random() * 100 + "%";
+  dot.style.animationDelay = Math.random() * -18 + "s"; 
+  particles.appendChild(dot);
+}
+
+// the clock part that appears on the orb
+const stage = document.querySelector("#stage");
+const orb = document.querySelector("#orb");
+const timeText = document.querySelector("#whisper");
