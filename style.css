@@ -367,3 +367,15 @@ body::after {
   pointer-events: none;
   transition: opacity 0.4s ease, translate 0.4s ease;
 }
+
+.bells-info strong {
+  display: block;
+  margin-bottom: 4px;
+  font: italic 400 1.05rem/1.2 var(--serif);
+}
+.bells:hover .bells-info,
+.bells:focus-visible .bells-info,
+.bells.open .bells-info {
+  opacity: 1;
+  translate: 0 0;
+}
