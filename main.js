@@ -107,3 +107,13 @@ function formatTime(h) {
   const h12 = hours % 12 === 0 ? 12 : hours % 12;
   return h12 + ":" + String(minutes).padStart(2, "0") + (hours < 12 ? " AM" : " PM");
 }
+function showTime() {
+  let time;
+  if (isPreview) {
+    time = formatTime(hour);
+  } else {
+    time = new Date().toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+  }
+  timeText.innerHTML = time + "<small>" + timeOfDay + "</small>";
+  timeText.classList.add("show");
+}
