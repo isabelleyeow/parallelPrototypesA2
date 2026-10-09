@@ -150,3 +150,14 @@ bellsBox.addEventListener("click", () => {
 
 let audioCtx;
 let hum;
+
+function makeRipple() {
+  const ripple = document.createElement("div");
+  ripple.className = "ripple";
+  stage.appendChild(ripple);
+  ripple.addEventListener("animationend", () => ripple.remove());
+
+  const bloom = document.querySelector("#bloom");
+  bloom.classList.add("ring");
+  setTimeout(() => bloom.classList.remove("ring"), 600);
+}
