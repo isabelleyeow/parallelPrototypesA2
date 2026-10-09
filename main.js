@@ -83,3 +83,7 @@ const isDay = timeOfDay === "morning" || timeOfDay === "midday" || timeOfDay ===
 if (isDay) {
   root.style.setProperty("--ink", "rgb(24, 24, 44)");
 }
+
+const particles = document.querySelector("#particles");
+const isStarry = timeOfDay === "night" || timeOfDay === "dusk";
+particles.classList.add(isStarry ? "stars" : "dust");
