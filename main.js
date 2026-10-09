@@ -179,3 +179,7 @@ function ringBowl(note) {
     osc.start(now);
     osc.stop(now + 8);
   });
+
+makeRipple();
+  countBell();
+}
