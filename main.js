@@ -147,3 +147,6 @@ function countBell() {
 bellsBox.addEventListener("click", () => {
   bellsBox.classList.toggle("open");
 });
+
+let audioCtx;
+let hum;
