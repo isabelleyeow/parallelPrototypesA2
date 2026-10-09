@@ -78,3 +78,8 @@ root.style.setProperty("--sky-top", colours[timeOfDay][0]);
 root.style.setProperty("--sky-mid", colours[timeOfDay][1]);
 root.style.setProperty("--sky-bottom", colours[timeOfDay][2]);
 root.style.setProperty("--orb-core", orbColours[timeOfDay]);
+
+const isDay = timeOfDay === "morning" || timeOfDay === "midday" || timeOfDay === "afternoon";
+if (isDay) {
+  root.style.setProperty("--ink", "rgb(24, 24, 44)");
+}
