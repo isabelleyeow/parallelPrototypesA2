@@ -297,3 +297,12 @@ body::after {
   0%, 100% { opacity: 0.25; }
   50% { opacity: 0.6; }
 }
+
+.caption {
+  max-width: min(440px, calc(100vw - 32px));
+  font: italic 400 1.1rem/1.4 var(--serif);
+  letter-spacing: 0.02em;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+.caption.show { opacity: 0.8; }
