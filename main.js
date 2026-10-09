@@ -27,3 +27,21 @@ const orbColours = {
   afternoon: "#ffdca6",  
   dusk:      "#ffc093"   
 };
+
+const ringGap = {
+  night:     12,
+  dawn:      9,
+  morning:   7,
+  midday:    6,
+  afternoon: 7,
+  dusk:      9
+};
+
+const pace = {
+  night:     "slowly",
+  dawn:      "gently",
+  morning:   "brightly",
+  midday:    "often",
+  afternoon: "warmly",
+  dusk:      "slowly"
+};
