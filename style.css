@@ -87,3 +87,9 @@ body::after {
   text-transform: none;
   font-weight: 400;
 }
+
+.proto-title .for-touch { display: none; }
+@media (hover: none) {
+  .proto-title .for-mouse { display: none; }
+  .proto-title .for-touch { display: block; }
+}
