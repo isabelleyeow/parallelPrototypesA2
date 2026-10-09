@@ -121,3 +121,6 @@ function showTime() {
 function hideTime() {
   timeText.classList.remove("show");
 }
+
+orb.addEventListener("mouseenter", showTime);
+orb.addEventListener("mouseleave", hideTime);
