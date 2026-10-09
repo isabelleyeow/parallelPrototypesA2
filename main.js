@@ -210,3 +210,7 @@ function startSound() {
 }
 
 document.addEventListener("pointerdown", startSound, { once: true });
+
+let holdTimer;
+let isBreathing = false;
+let firstPress = true;
