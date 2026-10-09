@@ -141,3 +141,19 @@ body::after {
   20%  { opacity: 0.5; }
   100% { opacity: 0; transform: translateY(-30vh); }
 }
+
+.pool {
+  position: absolute;
+  left: 50%;
+  bottom: -12vmin;
+  width: 120vmin;
+  height: 34vmin;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center,
+    color-mix(in srgb, var(--orb-core) 30%, transparent),
+    transparent 70%);
+  filter: blur(30px);
+}
+
+/* the glowing orb, was the most popular*/
