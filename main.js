@@ -100,3 +100,10 @@ for (let i = 0; i < 60; i++) {
 const stage = document.querySelector("#stage");
 const orb = document.querySelector("#orb");
 const timeText = document.querySelector("#whisper");
+
+function formatTime(h) {
+  const hours = Math.floor(h);
+  const minutes = Math.round((h - hours) * 60);
+  const h12 = hours % 12 === 0 ? 12 : hours % 12;
+  return h12 + ":" + String(minutes).padStart(2, "0") + (hours < 12 ? " AM" : " PM");
+}
