@@ -144,3 +144,6 @@ function countBell() {
     setTimeout(() => caption.classList.remove("show"), 7000);
   }
 }
+bellsBox.addEventListener("click", () => {
+  bellsBox.classList.toggle("open");
+});
