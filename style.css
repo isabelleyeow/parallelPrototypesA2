@@ -399,3 +399,17 @@ body::after {
   letter-spacing: 0.22em;
   opacity: 0.4;
 }
+
+.proto-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.08);
+  border: 1px solid rgb(255 255 255 / 0.14);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  opacity: 0.6;
+  transition: opacity 0.6s ease;
+}
