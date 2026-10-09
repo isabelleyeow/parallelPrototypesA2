@@ -124,3 +124,8 @@ function hideTime() {
 
 orb.addEventListener("mouseenter", showTime);
 orb.addEventListener("mouseleave", hideTime);
+
+const bellsBox = document.querySelector("#bells");
+const bellCount = document.querySelector("#bell-count");
+const caption = document.querySelector("#caption");
+let bells = 0;
