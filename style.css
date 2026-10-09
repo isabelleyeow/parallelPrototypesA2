@@ -219,3 +219,8 @@ body::after {
   transition: transform 2s ease, box-shadow 2s ease, opacity 2s ease;
   will-change: transform;
 }
+
+/* the press and hold sequence */
+.breathing .orb    { --scale: 1.22; --glow: 0.9; }
+.breathing .bloom  { --scale: 1.22; opacity: 1; }
+.breathing .corona { --scale: 1.22; opacity: 0.5; }
