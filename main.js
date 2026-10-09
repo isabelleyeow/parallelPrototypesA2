@@ -117,3 +117,7 @@ function showTime() {
   timeText.innerHTML = time + "<small>" + timeOfDay + "</small>";
   timeText.classList.add("show");
 }
+
+function hideTime() {
+  timeText.classList.remove("show");
+}
