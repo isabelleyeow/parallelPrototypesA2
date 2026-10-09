@@ -168,7 +168,7 @@ function ringBowl(note) {
   const bowlVolume = audioCtx.createGain();
   bowlVolume.gain.setValueAtTime(0, now);
   bowlVolume.gain.linearRampToValueAtTime(0.12, now + 0.05);
-  bowlVolume.gain.exponentialRampToValueAtTime(0.001, now + 8); // rings for 8 seconds
+  bowlVolume.gain.exponentialRampToValueAtTime(0.001, now + 8);
   bowlVolume.connect(audioCtx.destination);
 
   [note, note * 1.004].forEach((freq) => {
@@ -182,4 +182,9 @@ function ringBowl(note) {
 
 makeRipple();
   countBell();
+}
+
+function autoBell() {
+  ringBowl(chords[timeOfDay][0] * 2);
+  setTimeout(autoBell, ringGap[timeOfDay] * 1000);
 }
