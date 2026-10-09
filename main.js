@@ -214,3 +214,18 @@ document.addEventListener("pointerdown", startSound, { once: true });
 let holdTimer;
 let isBreathing = false;
 let firstPress = true;
+
+function glide(setting, value, seconds) {
+  const now = audioCtx.currentTime;
+  setting.cancelScheduledValues(now);
+  setting.setValueAtTime(setting.value, now);
+  setting.linearRampToValueAtTime(value, now + seconds);
+}
+
+document.addEventListener("pointerdown", () => {
+  holdTimer = setTimeout(() => {
+    isBreathing = true;
+    glide(hum.gain, 0.1, 3);
+    stage.classList.add("breathing");
+  }, 300);
+});
