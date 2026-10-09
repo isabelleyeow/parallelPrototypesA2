@@ -64,4 +64,17 @@ if (isPreview) {
   hour = Number(params.get("hour"));
 }
 
+const timeOfDay = getTimeOfDay(hour);
 
+document.querySelectorAll(".proto-nav a").forEach((link) => {
+  if (link.search === window.location.search) {
+    link.setAttribute("aria-current", "true");
+  }
+});
+
+// background editing
+const root = document.documentElement;
+root.style.setProperty("--sky-top", colours[timeOfDay][0]);
+root.style.setProperty("--sky-mid", colours[timeOfDay][1]);
+root.style.setProperty("--sky-bottom", colours[timeOfDay][2]);
+root.style.setProperty("--orb-core", orbColours[timeOfDay]);
