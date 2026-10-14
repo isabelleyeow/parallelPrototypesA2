@@ -134,7 +134,7 @@ function countBell() {
   bells = bells + 1;
   bellCount.textContent = bells;
   bellCount.classList.remove("pulse");
-  void bellCount.offsetWidth;
+  void bellCount.offsetWidth; 
   bellCount.classList.add("pulse");
 
   if (bells === 1) {
