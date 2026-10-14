@@ -8,7 +8,7 @@ const chords = {
   dusk:      [220.00, 261.63, 329.63, 392.00]   
 };
 
-// colours 
+// colours, i wanted to incorporate gradients to make it look prettier in a way. i really like the outcome and combination of these colours especially dusk
 const colours = {
   night:     ["#05060f", "#0c0e22", "#141733"],
   dawn:      ["#2d2757", "#7d4a7a", "#d4817f"],
@@ -72,7 +72,7 @@ document.querySelectorAll(".proto-nav a").forEach((link) => {
   }
 });
 
-// background editing
+// background editing and how they change. some mdn help since it was a little confusing 
 const root = document.documentElement;
 root.style.setProperty("--sky-top", colours[timeOfDay][0]);
 root.style.setProperty("--sky-mid", colours[timeOfDay][1]);
