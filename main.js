@@ -209,7 +209,6 @@ function startSound() {
 
   document.querySelector("#hint").classList.add("is-gone");
 }
-hg
 document.addEventListener("pointerdown", startSound, { once: true });
 
 let holdTimer;
