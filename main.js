@@ -151,6 +151,7 @@ bellsBox.addEventListener("click", () => {
 let audioCtx;
 let hum;
 // a new feature, a ripple like effect that happens when the orb is clicked. i think this enhances the interactivity part of my project. comments about how my project might be a little too simple from assignment 2 so i wanted to change it up a little. i decided to add more interactions so i hope this made it less simple and more interesting to play around with 
+
 function makeRipple() {
   const ripple = document.createElement("div");
   ripple.className = "ripple";
@@ -208,7 +209,7 @@ function startSound() {
 
   document.querySelector("#hint").classList.add("is-gone");
 }
-
+hg
 document.addEventListener("pointerdown", startSound, { once: true });
 
 let holdTimer;
